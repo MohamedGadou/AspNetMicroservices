@@ -7,7 +7,7 @@ namespace Catalog.API.Data
     {
         public static void SeedData(IMongoCollection<Product> productCollection)
         {
-            bool existProduct =  productCollection.Find(p => true).Any();
+            bool existProduct = productCollection.Find(p => true).Any();
             if (existProduct) return;
 
             productCollection.InsertManyAsync(GetPreconfiguredProducts());
@@ -77,6 +77,8 @@ namespace Catalog.API.Data
                     Price = 240.00M,
                     Category = "Home Kitchen"
                 }
+
+            };
         }
     }
 }
